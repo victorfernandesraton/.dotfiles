@@ -1,0 +1,8 @@
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[font]
+size = 14.0
+[font.normal]
+family = "MesloLGS NF"
+
+
