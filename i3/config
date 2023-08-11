@@ -43,6 +43,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# brightness solution for 25%
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 25  
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -210,10 +213,10 @@ gaps inner 10
 smart_gaps on
 
 for_window [class="^.*"] border pixel 3
-
+for_window [class="TelegranDesktop"] move to workspace $ws3
 #colors 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ebbcba #ebbcba #e0def4 #ebbcba   #ebbcba
+client.focused          #ebbcba #ebbcba #191724 #ebbcba   #ebbcba
 client.focused_inactive #333333 #5f676a #e0def4 #484e50   #9ccfd8
 client.unfocused        #333333 #222222 #888888 #292d2e   #31748f
 client.urgent           #2f343a #900000 #e0def4 #900000   #900000
