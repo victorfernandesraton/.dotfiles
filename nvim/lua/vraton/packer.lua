@@ -42,4 +42,5 @@ return require('packer').startup(function(use)
           "MunifTanjim/nui.nvim",
       }
   }
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 end)
