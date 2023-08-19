@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "victor_raton";
-  home.homeDirectory = "/home/victor_raton";
+  home.username = "v_raton";
+  home.homeDirectory = "/home/v_raton";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -17,7 +17,8 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    spectacle
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -58,7 +59,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/victor_raton/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/v_raton/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
