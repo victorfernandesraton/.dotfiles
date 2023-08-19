@@ -37,7 +37,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # background
-exec --no-startup-id feh --bg-scale ~/.config/ascii.png
+exec --no-startup-id feh --bg-scale ~/.config/wallpaper.png
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -190,6 +190,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bindsym $mod+x exec spectacle
+
 # Scrennshot with shit x because my keyboard is 65%
 bindsym $mod+Shift+x exec scrot -F ~/Pictures/Screenshots/Screenshot-%Y-%m-%d%H:%M:%S.png
 
