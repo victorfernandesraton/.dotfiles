@@ -7,6 +7,7 @@
         ./tmux.nix
         ./zsh.nix
         ./alacritty/alacritty.nix
+        ./rofi/rofi.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -32,6 +33,7 @@
     nodejs_20
     python310
     thunderbird
+    rofi
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
