@@ -3,14 +3,15 @@
 {
     programs.rofi = {
         enable = true;
-        configPath = "./config.rasi";
+        theme = "./rose-pine.rasi";
         plugins = with pkgs; [
+            # rofi-pulse-select
         ];
     };
 
     home = {
         file = {
-            ".config/rofi/config.rasi".source = ./config.rasi;
+            ".config/rofi/rose-pine.rasi".source = ./rose-pine.rasi;
         };
     };
 }
