@@ -4,6 +4,8 @@
     programs.rofi = {
         enable = true;
         configPath = "./config.rasi";
+        plugins = with pkgs; [
+        ];
     };
 
     home = {
