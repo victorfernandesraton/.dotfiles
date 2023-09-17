@@ -29,7 +29,7 @@
   time.timeZone = "America/Bahia";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "pt_BR.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.UTF-8";
@@ -50,7 +50,7 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "us,br";
-    xkbVariant = "";
+    xkbVariant = "intl";
     # enable i3 and some stuff
     desktopManager = {
       # xterm.enable = true;

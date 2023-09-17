@@ -37,7 +37,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 # Blueman for manage bluethout
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 
 # background
 # Use pactl to adjust volume in PulseAudio.
@@ -226,7 +226,7 @@ client.placeholder      #000000 #0c0c0c #e0def4 #000000   #0c0c0c
 
 client.background       #ffffff
 
-bindsym $mod+Shift+u exec setxkbmap -model "pc104" -layout "us" -variant ""
+bindsym $mod+Shift+u exec setxkbmap -model "pc104" -layout "us" -variant "intl"
 bindsym $mod+Shift+i exec setxkbmap -model "abnt2" -layout "br" -variant "abnt2"
 
 # lock srceen 
@@ -240,3 +240,9 @@ bindsym $mod+t exec thunar ~/
 # volume manager
 bindsym $mod+comma exec amixer set Master -q 10%-
 bindsym $mod+period exec amixer set Master -q 10%+
+
+# bluethout manager in rofi
+bindsym $mod+Control+b exec rofi-bluetooth
+
+# power menu
+bindsym $mod+Control+p exec rofi -show power-menu -modi power-menu:rofi-power-menu

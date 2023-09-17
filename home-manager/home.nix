@@ -33,8 +33,12 @@
     nodejs_20
     python310
     thunderbird
-    rofi
     fzf
+    fd
+    rofi-pulse-select
+    rofi-bluetooth
+    rofi-pulse-select
+    rofi-power-menu
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
