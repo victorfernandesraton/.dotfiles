@@ -51,12 +51,6 @@
   services.xserver = {
     layout = "us,br";
     xkbVariant = "intl";
-    # enable i3 and some stuff
-    desktopManager = {
-      # xterm.enable = true;
-      # plasma5.enable = true;
-    };
-   
     displayManager = {
         # for i3
 	defaultSession = "none+i3";
@@ -121,10 +115,7 @@
     description = "v_raton";
     extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" ];
     packages = with pkgs; [
-      firefox
-      vscode
-      telegram-desktop
-      networkmanagerapplet
+        telegram-desktop
     ];
     shell = pkgs.zsh;
   };
@@ -135,31 +126,41 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wgeit
+     firefox
      neovim
      git
      gcc
-     alacritty
+     kitty
      home-manager
      glibc
      libvdpau
      xorg.libxcb
+     networkmanagerapplet
+     vscodium
   ];
-  # Hoome manager config
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # bluethooth
   hardware.bluetooth.enable = true;
   # steam
   programs.steam.enable = true;
   
+  virtualisation = {
+    # podman
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+      # For Nixos version > 22.11
+      #defaultNetwork.settings = {
+      #  dns_enabled = true;
+      #};
+    };
+  };
+
   # fonts
   fonts.fonts = with pkgs; [
      meslo-lgs-nf

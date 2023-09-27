@@ -6,8 +6,8 @@
         [
         ./tmux.nix
         ./zsh.nix
-        ./alacritty/alacritty.nix
         ./rofi/rofi.nix
+        ./kitty/kitty.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -35,10 +35,16 @@
     thunderbird
     fzf
     fd
+    podman
+    podman-compose
+    podman-desktop
+    podman-desktop
     rofi-pulse-select
     rofi-bluetooth
     rofi-pulse-select
     rofi-power-menu
+    libsForQt5.kdeconnect-kde
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -83,7 +89,7 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    EDITOR = "neovim";
+    EDITOR = "nvim";
   };
 
 

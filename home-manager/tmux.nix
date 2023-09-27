@@ -29,6 +29,12 @@
 
             ## update the TERM variable of terminal emulator when creating a new session or attaching a existing session
             set -g update-environment 'DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY TERM'
+            # use vi mode 
+            setw -g mode-keys vi
+            bind -T copy-mode-vi v send -X begin-selection
+            bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+            bind P paste-buffer
+            bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
         '';
     };
 }

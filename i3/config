@@ -59,7 +59,8 @@ tiling_drag modifier titlebar
 
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -194,9 +195,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Scrennshot with shit x because my keyboard is 65%
-bindsym $mod+x exec scrot -F ~/Pictures/Screenshot-%Y-%m-%d%H:%M:%S.png
+bindsym $mod+x exec scrot -F ~/Pictures/Screenshot-%d-%m-%Y%H:%M:%S.png
 
-bindsym $mod+Print exec scrot -F ~/Pictures/Screenshot-%Y-%m-%d%H:%M:%S.png
+bindsym $mod+Control+x exec scrot -F ~/Pictures/Screenshot-%d-%m-%Y%H:%M:%S.png -e 'gimp $f'
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {

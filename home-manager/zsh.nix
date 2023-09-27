@@ -9,6 +9,7 @@ in
         dotDir = ".config/zsh";
         initExtra = ''
             [[ ! -f ${p10kTheme} ]] || source ${p10kTheme}
+            neofetch
         '';
         shellAliases = {
             ocp = "cd $(fd -H -td -d 1 . /home/v_raton/git | fzf)";

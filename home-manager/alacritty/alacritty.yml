@@ -1,8 +1,0 @@
-import:
-  - ~/.config/alacritty/rose-pine.yml
-
-font:
-  normal:
-    family: MesloLGS NF
-  size: 14
-
