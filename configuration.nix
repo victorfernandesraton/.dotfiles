@@ -116,6 +116,7 @@
     extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" ];
     packages = with pkgs; [
         telegram-desktop
+        uwufetch
     ];
     shell = pkgs.zsh;
   };

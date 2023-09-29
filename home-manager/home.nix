@@ -44,7 +44,6 @@
     rofi-pulse-select
     rofi-power-menu
     libsForQt5.kdeconnect-kde
-
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
