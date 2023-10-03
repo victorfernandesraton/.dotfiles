@@ -161,7 +161,9 @@
       #};
     };
   };
-
+  
+  # Enable experimental-features
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
   fonts.fonts = with pkgs; [
      meslo-lgs-nf
