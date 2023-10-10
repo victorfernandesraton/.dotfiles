@@ -8,9 +8,10 @@
             rofi-pulse-select
             rofi-bluetooth
             rofi-power-menu
+            rofi-calc
         ];
         extraConfig = {
-         modi = "drun,run,ssh";
+         modi = "drun,run,ssh,calc";
         };
     };
 

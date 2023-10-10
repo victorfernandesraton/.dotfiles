@@ -54,9 +54,9 @@
     displayManager = {
         # for i3
 	defaultSession = "none+i3";
-	lightdm.enable = true;
+	# lightdm.enable = true;
 	# for kde
-	# sddm.enable = true;
+    	sddm.enable = true;
     };
 
     windowManager.i3 = {
