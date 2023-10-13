@@ -50,13 +50,14 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "us,br";
-    xkbVariant = "intl";
+    xkbVariant = "intl,abnt2";
+    xkbModel = "pc104,abnt2";
     displayManager = {
         # for i3
 	defaultSession = "none+i3";
-	# lightdm.enable = true;
+	lightdm.enable = true;
 	# for kde
-    	sddm.enable = true;
+    	# sddm.enable = true;
     };
 
     windowManager.i3 = {
@@ -73,7 +74,7 @@
   };
 
   # network manager
-  programs.nm-applet.enable = true;
+  programs.nm-applet.enable = false;
   # blueman for bluetooth manager
   services.blueman.enable = true;
   # Configure console keymap

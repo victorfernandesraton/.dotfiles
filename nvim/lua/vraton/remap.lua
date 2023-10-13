@@ -1,6 +1,4 @@
 vim.g.mapleader = " "
--- show file explorer
-vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
  
 -- copy things from vim to my system
 vim.keymap.set("n", "<leader>y",  "\"+ y")
