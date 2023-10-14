@@ -72,7 +72,8 @@
       ];
     };
   };
-
+  # KDE connect 
+  programs.kdeconnect.enable = true;
   # network manager
   programs.nm-applet.enable = false;
   # blueman for bluetooth manager
