@@ -30,7 +30,7 @@
     scrot
     go
     nodejs_20
-    python310
+    python312
     thunderbird
     fzf
     fd
