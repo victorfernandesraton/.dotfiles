@@ -1,21 +1,17 @@
 local lsp = require('lsp-zero')
-lsp.preset("recommended")
-lsp.ensure_installed({
-	"eslint",
-	'tsserver',
-	"pyright",
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {'tsserver','pylsp', 'gopls'},
+  handlers = {
+    lsp.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+  }
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { 'vim' }
-			}
-		}
-	}
-})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
