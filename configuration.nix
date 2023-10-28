@@ -51,7 +51,6 @@
   services.xserver = {
     layout = "us,br";
     xkbVariant = "intl,abnt2";
-    xkbModel = "pc104,abnt2";
     displayManager = {
         # for i3
 	defaultSession = "none+i3";
@@ -72,8 +71,7 @@
       ];
     };
   };
-  # KDE connect 
-  programs.kdeconnect.enable = true;
+
   # network manager
   programs.nm-applet.enable = false;
   # blueman for bluetooth manager
@@ -116,10 +114,6 @@
     isNormalUser = true;
     description = "v_raton";
     extraGroups = [ "networkmanager" "wheel" "kvm" "libvirtd" ];
-    packages = with pkgs; [
-        telegram-desktop
-        uwufetch
-    ];
     shell = pkgs.zsh;
   };
 
@@ -129,6 +123,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     telegram-desktop
+     uwufetch
      firefox
      neovim
      git
