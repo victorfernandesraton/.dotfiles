@@ -10,7 +10,7 @@ in
         ./zsh.nix
         ./rofi/rofi.nix
         ./kitty/kitty.nix
-        ./nvim/nvim.nix
+        ./nvim/default.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
