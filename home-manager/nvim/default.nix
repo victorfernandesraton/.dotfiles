@@ -75,7 +75,6 @@
 
           vim.o.mouse = 'a'
 
-          vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
           -- copy things from vim to my system
           vim.keymap.set("n", "<leader>y",  "\"+ y")
@@ -134,6 +133,27 @@
 
       lualine-nvim
       nvim-web-devicons
+      plenary-nvim
+      nui-nvim
+      
+      {
+        plugin = neo-tree-nvim;
+        type = "lua";
+        config = ''
+          vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
+          require("neo-tree").setup({
+            close_if_last_window = false,
+            enable_git_status = true,
+            filesystem = {
+              follow_current_file = {
+                enabled = true,
+                leave_dirs_open = false,
+              },
+              hijack_netrw_behavior = "open_default",
+            }
+          })
+        '';
+      }
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -155,6 +175,18 @@
               highlight = { enable = true },
 
               indent = { enable = true },
+          }
+        '';
+      }
+
+      {
+        plugin = toggleterm-nvim;
+        type = "lua";
+        config = ''
+          require("toggleterm").setup{
+            open_mapping = [[<c-t>]],
+            direction = 'float',
+            auto_scroll = true,
           }
         '';
       }
