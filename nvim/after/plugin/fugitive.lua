@@ -1,5 +1,0 @@
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-vim.keymap.set("n", "<leader>gll",":Git log --all --decorate --oneline --graph<CR>")
-vim.keymap.set("n", "<leader>gpp" , ":G push <CR>")
-vim.keymap.set("n", "<leader>gff" , ":G fetch <CR>")
-vim.keymap.set("n", "<leader>gpl" , ":G pull <CR>")

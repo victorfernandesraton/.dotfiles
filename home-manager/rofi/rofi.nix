@@ -11,7 +11,7 @@
             rofi-calc
         ];
         extraConfig = {
-         modi = "drun,run,ssh,calc";
+         modi = "drun,run,ssh,calc,filebrowser";
         };
     };
 

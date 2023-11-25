@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-
+let
+  devPkgs = import ./devPkgs.nix pkgs;
+in
 {
     imports = 
         [
@@ -8,6 +10,7 @@
         ./zsh.nix
         ./rofi/rofi.nix
         ./kitty/kitty.nix
+        ./nvim/nvim.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -25,27 +28,18 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    tmux
-    scrot
-    go
-    nodejs_20
-    python310
-    python310Packages.pip
-    pypy3
-    thunderbird
-    fzf
-    fd
-    podman
-    podman-compose
-    podman-desktop
-    podman-desktop
-    rofi-pulse-select
-    rofi-bluetooth
-    rofi-pulse-select
-    rofi-power-menu
-    rofi-calc
-    libsForQt5.kdeconnect-kde
+  home.packages = 
+  devPkgs ++
+  [
+    pkgs.tmux
+    pkgs.scrot
+    pkgs.thunderbird
+    pkgs.rofi-pulse-select
+    pkgs.rofi-bluetooth
+    pkgs.rofi-pulse-select
+    pkgs.rofi-power-menu
+    pkgs.rofi-calc
+    pkgs.libsForQt5.kdeconnect-kde
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -80,4 +74,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "webgl.disabled" = false;
+
+    };
+  };
 }

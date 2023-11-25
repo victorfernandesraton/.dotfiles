@@ -54,20 +54,19 @@
     displayManager = {
         # for i3
 	defaultSession = "none+i3";
-	lightdm.enable = true;
+	# lightdm.enable = true;
 	# for kde
-    	# sddm.enable = true;
+    	sddm.enable = true;
     };
 
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-	# rofi #application launcher most people use
-     	i3status
-	feh
-	betterlockscreen
-	arandr
-	xfce.thunar
+        i3status
+        feh
+        betterlockscreen
+        arandr
+        xfce.thunar
       ];
     };
   };
@@ -124,8 +123,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      telegram-desktop
-     uwufetch
-     firefox
+     librewolf
      neovim
      git
      gcc
@@ -137,6 +135,10 @@
      networkmanagerapplet
      vscodium
   ];
+  
+  environment.sessionVariables = {
+     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+  };
 
   # bluethooth
   hardware.bluetooth.enable = true;
