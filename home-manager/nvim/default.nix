@@ -149,6 +149,10 @@
                 enabled = true,
                 leave_dirs_open = false,
               },
+              filtered_items = {
+                hide_dotfiles = false,
+                hide_gitignored = false,
+              },
               hijack_netrw_behavior = "open_default",
             }
           })
