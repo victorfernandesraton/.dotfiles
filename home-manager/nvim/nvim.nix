@@ -67,7 +67,7 @@
           vim.opt.termguicolors = true
 
           vim.opt.nu = true
-          vim.opt.relativenumber = false
+          vim.opt.relativenumber = true
           vim.opt.scrolloff = 4
           vim.opt.colorcolumn = "80"
           vim.opt.updatetime = 50
@@ -154,6 +154,7 @@
                 hide_gitignored = false,
               },
               hijack_netrw_behavior = "open_default",
+              use_libuv_file_watcher = true,
             }
           })
         '';

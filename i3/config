@@ -236,7 +236,7 @@ bindsym $mod+Escape exec betterlockscreen -l dim
 # open firefox
 bindsym $mod+b exec librewolf
 # open file manager
-bindsym $mod+t exec thunar ~/
+bindsym $mod+t exec nemo ~/
 
 # volume manager
 bindsym $mod+comma exec amixer set Master -q 10%-
