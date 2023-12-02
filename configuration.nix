@@ -67,6 +67,8 @@
         betterlockscreen
         arandr
         cinnamon.nemo
+        fd
+        i3blocks
       ];
     };
   };

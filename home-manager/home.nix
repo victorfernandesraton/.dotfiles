@@ -11,6 +11,8 @@ in
         ./rofi/rofi.nix
         ./kitty/kitty.nix
         ./nvim/nvim.nix
+        ./i3/i3.nix
+        ./i3status/i3status.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
