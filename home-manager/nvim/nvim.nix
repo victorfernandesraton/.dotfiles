@@ -92,6 +92,11 @@
           vim.keymap.set("n", "<leader>d", "\"_d")
           vim.keymap.set("v", "<leader>d", "\"_d")
 
+          -- center on pagedown and pageup
+          vim.keymap.set("n", "<C-u>", "<C-u>zz")
+          vim.keymap.set("v", "<C-u>", "<C-u>zz")
+          vim.keymap.set("n", "<C-d>", "<C-d>zz")
+          vim.keymap.set("v", "<C-d>", "<C-d>zz")
         '';
       }
       
