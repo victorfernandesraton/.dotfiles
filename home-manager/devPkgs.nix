@@ -12,8 +12,9 @@ let
         pp.virtualenv
         pp.black
         pp.isort
+        pp.python-lsp-server
     ];
-    custom_python_enviroment = pkgs.python310.withPackages custom_python_packages;
+    custom_python_enviroment = pkgs.python311.withPackages custom_python_packages;
 
 in
 # Dev packages
@@ -32,7 +33,6 @@ in
 
 # System packages
 [
-    pkgs.nodePackages.npm           # Some programns need this to build
     pkgs.dpkg
     pkgs.zip                        # To archive files
     pkgs.unzip                      # Some nvim LSPs need this to install
@@ -57,5 +57,22 @@ in
 
     # Python with some packages installed
     custom_python_enviroment
+    # ruff python lint
+    pkgs.ruff
+
+    # Nix
+    pkgs.rnix-lsp
+
+    # Lua
+    pkgs.sumneko-lua-language-server
+    pkgs.lua53Packages.lua-lsp
+
+    # Latex
+    pkgs.texlab
+
+    # Markdown lsp
+    pkgs.marksman
+    #  node lsp
+    pkgs.nodePackages.typescript-language-server
 ]
 

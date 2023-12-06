@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
-  let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: toLua "${builtins.readFile file}";
-  in
 {
 
-    imports = [
-      ./lsp.nix
-    ];
+  imports = [
+    ./lsp.nix
+  ];
 
   programs.neovim = 
 
@@ -52,7 +48,7 @@
       {
         plugin = comment-nvim;
         type = "lua";
-        config = ''
+        config = /*lua */ ''
           vim.g.mapleader = ' '
           vim.g.maplocalleader = ' '
           vim.opt.shiftwidth = 4
@@ -103,7 +99,7 @@
       {
         plugin = vim-fugitive;
         type = "lua";
-        config = ''
+        config = /*lua*/''
           vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
           vim.keymap.set("n", "<leader>gll",":Git log --all --decorate --oneline --graph<CR>")
           vim.keymap.set("n", "<leader>gpp" , ":G push <CR>")
@@ -162,6 +158,14 @@
               use_libuv_file_watcher = true,
             }
           })
+        '';
+      }
+
+      {
+        plugin = undotree;
+        type = "lua";
+        config = /*lua*/ ''
+          vim.keymap.set('n', '<leader>fu', vim.cmd.UndotreeToggle)
         '';
       }
 

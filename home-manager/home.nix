@@ -43,6 +43,15 @@ in
     pkgs.rofi-calc
     pkgs.libsForQt5.kdeconnect-kde
     pkgs.ungoogled-chromium
+    pkgs.gimp
+    pkgs.insomnia
+    pkgs.discord
+    pkgs.galaxy-buds-client
+    pkgs.stremio
+    pkgs.spotify
+    pkgs.visidata
+    pkgs.obs-studio
+    pkgs.helix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
