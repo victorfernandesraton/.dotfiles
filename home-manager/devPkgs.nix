@@ -74,5 +74,6 @@ in
     pkgs.marksman
     #  node lsp
     pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.eslint
 ]
 

@@ -13,6 +13,7 @@ in
         ./nvim/nvim.nix
         ./i3/i3.nix
         ./i3status/i3status.nix
+        ./helix/helix.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -52,6 +53,7 @@ in
     pkgs.visidata
     pkgs.obs-studio
     pkgs.helix
+    pkgs.pwvucontrol
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
