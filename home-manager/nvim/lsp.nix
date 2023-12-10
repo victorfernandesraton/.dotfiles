@@ -26,6 +26,7 @@
         add_lsp(lspconfig.gopls, {})
         add_lsp(lspconfig.lua_ls, {})
         add_lsp(lspconfig.tsserver, {})
+        add_lsp(lspconfig.marksman, {})
         add_lsp(lspconfig.texlab, {
           chktex = { onEdit = true, onOpenAndSave = true }
         })
@@ -64,6 +65,9 @@
         })
       '';
     }
+
+    # Markdown support
+    nvim-treesitter-parsers.markdown
  
     # Completions
     cmp-nvim-lsp
