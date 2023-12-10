@@ -20,6 +20,39 @@ in
   home.username = "v_raton";
   home.homeDirectory = "/home/v_raton";
 
+  xdg.mimeApps = {
+    enable = true;
+  
+    defaultApplications = {
+      "text/html" = "librewolf.desktop";
+      "x-scheme-handler/http" = "librewolf.desktop";
+      "x-scheme-handler/https" = "librewolf.desktop";
+      "x-scheme-handler/about" = "librewolf.desktop";
+      "x-scheme-handler/unknown" = "librewolf.desktop";
+      "x-scheme-handler/chrome" = "librewolf.desktop";
+      "x-scheme-handler/mailto" = "userapp-Thunderbird-NKVW91.desktop";
+      "x-scheme-handler/mid" = "userapp-Thunderbird-NKVW91.desktop";
+      "x-scheme-handler/news" = "userapp-Thunderbird-V7VX91.desktop";
+      "x-scheme-handler/snews" = "userapp-Thunderbird-V7VX91.desktop";
+      "x-scheme-handler/nntp" = "userapp-Thunderbird-V7VX91.desktop";
+      "x-scheme-handler/feed" = "userapp-Thunderbird-U09X91.desktop";
+      "application/rss+xml" = "userapp-Thunderbird-U09X91.desktop";
+      "application/x-extension-rss" = "userapp-Thunderbird-U09X91.desktop";
+      "x-scheme-handler/webcal" = "userapp-Thunderbird-D7DHA2.desktop";
+      "x-scheme-handler/webcals" = "userapp-Thunderbird-D7DHA2.desktop";
+      "video/x-matroska" = "smartcode-stremio.desktop";
+      "image/png" = "librewolf.desktop";
+      "video/mp4" = "mpv.desktop";
+      "application/pdf" = "librewolf.desktop";
+      "application/x-extension-htm" = "librewolf.desktop";
+      "application/x-extension-html" = "librewolf.desktop";
+      "application/x-extension-shtml" = "librewolf.desktop";
+      "application/xhtml+xml" = "librewolf.desktop";
+      "application/x-extension-xhtml" = "librewolf.desktop";
+      "application/x-extension-xht" = "librewolf.desktop";
+      "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
+    };
+  };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -83,6 +116,7 @@ in
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
+    DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
   };
 
 
