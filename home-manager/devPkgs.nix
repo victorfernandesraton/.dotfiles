@@ -13,6 +13,7 @@ let
         pp.black
         pp.isort
         pp.python-lsp-server
+        pp.debugpy
     ];
     custom_python_enviroment = pkgs.python311.withPackages custom_python_packages;
 
