@@ -3,6 +3,7 @@
 
   imports = [
     ./lsp.nix
+    ./dap.nix
   ];
 
   programs.neovim = 
@@ -101,10 +102,10 @@
         type = "lua";
         config = /*lua*/''
           vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-          vim.keymap.set("n", "<leader>gll",":Git log --all --decorate --oneline --graph<CR>")
+          vim.keymap.set("n", "<leader>gll",":G log --all --decorate --oneline --graph<CR>")
           vim.keymap.set("n", "<leader>gpp" , ":G push <CR>")
           vim.keymap.set("n", "<leader>gff" , ":G fetch <CR>")
-          vim.keymap.set("n", "<leader>gpl" , ":G pull <CR>")
+          vim.keymap.set("n", "<leader>gll" , ":G pull <CR>")
         '';
       }
 
@@ -178,6 +179,7 @@
           p.tree-sitter-python
           p.tree-sitter-json
           p.tree-sitter-javascript
+          p.tree-sitter-markdown
         ]));
         type = "lua";
         config = ''        
@@ -196,9 +198,9 @@
       {
         plugin = toggleterm-nvim;
         type = "lua";
-        config = ''
+        config = /*lua*/''
           require("toggleterm").setup{
-            open_mapping = [[<c-t>]],
+            open_mapping = [[<C-t>]],
             direction = 'float',
             auto_scroll = true,
           }
@@ -207,6 +209,24 @@
 
       vim-nix
 
+      {
+        plugin = harpoon;
+        type = "lua";
+        config = /* lua */''
+          local ui = require("harpoon.ui")
+          local mark = require("harpoon.mark")
+
+          vim.keymap.set('n', '<leader>a' ,mark.add_file)
+          vim.keymap.set('v', '<leader>a' ,mark.add_file)
+
+          vim.keymap.set('n', '<C-a>' ,ui.toggle_quick_menu)
+          vim.keymap.set('v', '<C-a>' ,ui.toggle_quick_menu)
+          vim.keymap.set('n', '<C-j>' ,ui.nav_prev)
+          vim.keymap.set('n', '<C-k>' ,ui.nav_next)
+          vim.keymap.set('v', '<C-j>' ,ui.nav_prev)
+          vim.keymap.set('v', '<C-k>' ,ui.nav_next)
+        '';
+      }
     ];
   };
 }
