@@ -87,6 +87,7 @@ in
     pkgs.obs-studio
     pkgs.helix
     pkgs.pwvucontrol
+    pkgs.neofetch
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
