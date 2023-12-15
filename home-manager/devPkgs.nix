@@ -37,7 +37,7 @@ in
     pkgs.dpkg
     pkgs.zip                        # To archive files
     pkgs.unzip                      # Some nvim LSPs need this to install
-    pkgs.nodejs                     # Some nvim LSPs need this
+    pkgs.nodejs_20                    # Some nvim LSPs need this
     pkgs.go
     pkgs.libstdcxx5                 # Some nvim LSP need this to work
     pkgs.gcc-unwrapped
@@ -76,5 +76,9 @@ in
     #  node lsp
     pkgs.nodePackages.typescript-language-server
     pkgs.nodePackages.eslint
+
+    # golang
+    pkgs.gopls
+    pkgs.delve
 ]
 

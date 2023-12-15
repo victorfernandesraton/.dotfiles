@@ -32,8 +32,8 @@
         })
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-        vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float)
-        vim.keymap.set('v', '<leader>vd', vim.diagnostic.open_float)
+        vim.keymap.set('n', '<leader>gv', vim.diagnostic.open_float)
+        vim.keymap.set('v', '<leader>gv', vim.diagnostic.open_float)
         vim.keymap.set('n', '<leader>gN', vim.diagnostic.goto_prev)
         vim.keymap.set('n', '<leader>gn', vim.diagnostic.goto_next)
 
@@ -73,6 +73,23 @@
     cmp-nvim-lsp
     cmp-buffer
     lspkind-nvim
+    {
+      plugin = go-nvim;
+      type = "lua";
+      config = /*lua*/ ''
+        local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          pattern = "*.go",
+          callback = function()
+           require('go.format').goimport()
+          end,
+          group = format_sync_grp,
+        })
+
+        require('go').setup()
+      '';
+    }
+
     {
       plugin = nvim-cmp;
       type = "lua";
