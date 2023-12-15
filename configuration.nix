@@ -45,6 +45,9 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  # Enable firmware deamon update
+  services.fwupd.enable = true;
+  
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -130,6 +133,8 @@
   environment.systemPackages = with pkgs; [
      telegram-desktop
      librewolf
+     tor
+     tor-browser
      neovim
      git
      gcc
