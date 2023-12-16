@@ -73,6 +73,9 @@
     cmp-nvim-lsp
     cmp-buffer
     lspkind-nvim
+
+    # Go lsp
+    nvim-treesitter-parsers.go
     {
       plugin = go-nvim;
       type = "lua";
