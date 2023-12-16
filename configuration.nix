@@ -67,13 +67,14 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        i3status
+        acpi
+        i3blocks
         feh
+        dmenu
         betterlockscreen
         arandr
         cinnamon.nemo
         fd
-        i3blocks
       ];
     };
   };

@@ -8,11 +8,11 @@ in
         [
         ./tmux.nix
         ./zsh.nix
-        ./rofi/rofi.nix
         ./kitty/kitty.nix
         ./nvim/nvim.nix
         ./i3/i3.nix
         ./i3status/i3status.nix
+        ./i3blocks/i3blocks.nix
         ./helix/helix.nix
         ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -67,14 +67,10 @@ in
   home.packages = 
   devPkgs ++
   [
+    pkgs.cava
     pkgs.tmux
     pkgs.scrot
     pkgs.thunderbird
-    pkgs.rofi-pulse-select
-    pkgs.rofi-bluetooth
-    pkgs.rofi-pulse-select
-    pkgs.rofi-power-menu
-    pkgs.rofi-calc
     pkgs.libsForQt5.kdeconnect-kde
     pkgs.ungoogled-chromium
     pkgs.gimp
@@ -88,6 +84,12 @@ in
     pkgs.helix
     pkgs.pwvucontrol
     pkgs.neofetch
+    pkgs.dmenu
+    pkgs.networkmanager_dmenu
+    pkgs.dmenu-bluetooth
+    pkgs.clipmenu
+    pkgs.sysstat
+    pkgs.htop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
