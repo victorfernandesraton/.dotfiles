@@ -32,6 +32,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 exec --no-startup-id betterlockscreen -u ~/.config/wallpaper.png 
 exec --no-startup-id feh --no-xinerama --bg-scale ~/.config/wallpaper.png
+exec --no-startup-id clipmenud
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -81,6 +82,9 @@ bindsym $mod+Control+b exec dmenu-bluetooth -fn 'MesloLGS NF-18' -l 7 -sb '#ebbc
 
 # network
 bindsym $mod+c exec networkmanager_dmenu -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
+
+# clipmenu
+bindsym $mod+Control+c exec clipmenu -i -l 10 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
 
 

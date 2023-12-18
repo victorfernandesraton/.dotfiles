@@ -67,7 +67,6 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        acpi
         i3blocks
         feh
         dmenu
@@ -95,6 +94,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
+
 
   # Enable sound with pipewire.
   sound.enable = true;

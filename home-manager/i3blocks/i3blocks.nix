@@ -7,20 +7,41 @@ let
 in 
 {
     home = {
+      packages = with pkgs; [
+        acpi
+        sysstat
+      ];
         file = {
-            "${BASE_DIR}/battery.sh".source = ./battery.sh;
+            "${BASE_DIR}/battery".text = /*bash*/ ''
+                BAT=$(acpi -b | grep -E -o '[0-9]{1,3}?%')
+
+                # Full and short texts
+                echo "BAT: $BAT"
+
+                # Set urgent flag below 5% or use orange below 20%
+                [ ${"$"}{BAT%?} -le 15 ] && exit 33
+                [ ${"$"}{BAT%?} -le 25 ] && echo "#FF8000"
+
+                exit 0
+            '';
             "${BASE_DIR}/disk_usage".source = ./disk_usage;
             "${BASE_DIR}/cpu_usage".source = ./cpu_usage;
             "${BASE_DIR}/memory".source = ./memory;
             "${BASE_DIR}/config".text = ''
                   [battery]
-                  command=sh ${SCRIPT_DIR}/battery.sh
+                  command=sh ${SCRIPT_DIR}/battery
                   interval=10
 
                   [cpu_usage]
                   command=perl ${SCRIPT_DIR}/cpu_usage 
                   interval=10
                   LABEL=CPU 
+                  T_WARN=70
+                  T_CRIT=90
+                  COLOR_NORMAL=#e0def4
+                  COLOR_WARN=#f6c177
+                  COLOR_CRIT=#eb6f92
+
 
                   [memory_ram]
                   command=sh ${SCRIPT_DIR}/memory

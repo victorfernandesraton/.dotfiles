@@ -84,11 +84,6 @@ in
     pkgs.helix
     pkgs.pwvucontrol
     pkgs.neofetch
-    pkgs.dmenu
-    pkgs.networkmanager_dmenu
-    pkgs.dmenu-bluetooth
-    pkgs.clipmenu
-    pkgs.sysstat
     pkgs.htop
   ];
 
