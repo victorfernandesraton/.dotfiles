@@ -59,7 +59,14 @@
             timeout_ms = 10000,
           },
           servers = {
-            ['eslint'] = {'javascript', 'typescript', 'javascriptreact', 'javascript.jsx', 'typescriptreact', 'typescript.tsx'},
+            ['eslint'] = {
+              'javascript',
+              'typescript', 
+              'javascriptreact', 
+              'javascript.jsx', 
+              'typescriptreact',
+              'typescript.tsx'
+            },
             ['rust_analyzer'] = {'rust'},
             ['gofmt'] = {'golang'},
             ['ruff_lsp'] = {'python'},

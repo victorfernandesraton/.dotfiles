@@ -6,7 +6,7 @@ in
 {
   imports =
     [
-      ./tmux.nix
+      ./tmux/tmux.nix
       ./zsh.nix
       ./kitty/kitty.nix
       ./nvim/nvim.nix
