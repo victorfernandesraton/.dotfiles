@@ -12,7 +12,8 @@ in
         sysstat
       ];
         file = {
-            "${BASE_DIR}/battery".text = /*bash*/ ''
+          "${BASE_DIR}/battery" = {
+              text = /*bash*/ ''
                 BAT=$(acpi -b | grep -E -o '[0-9]{1,3}?%')
 
                 # Full and short texts
@@ -23,10 +24,22 @@ in
                 [ ${"$"}{BAT%?} -le 25 ] && echo "#FF8000"
 
                 exit 0
-            '';
-            "${BASE_DIR}/disk_usage".source = ./disk_usage;
-            "${BASE_DIR}/cpu_usage".source = ./cpu_usage;
-            "${BASE_DIR}/memory".source = ./memory;
+              '';
+              enable = true;
+              executable = true;
+            };
+            "${BASE_DIR}/disk_usage" = {
+              source = ./disk_usage;
+              executable = true;
+            };
+            "${BASE_DIR}/cpu_usage" = {
+              source = ./cpu_usage;
+              executable = true;
+            };
+            "${BASE_DIR}/memory" = {
+              source = ./memory;
+              executable = true;
+            };
             "${BASE_DIR}/config".text = ''
                   [battery]
                   command=sh ${SCRIPT_DIR}/battery

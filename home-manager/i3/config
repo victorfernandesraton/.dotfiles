@@ -84,9 +84,13 @@ bindsym $mod+Control+b exec dmenu-bluetooth -fn 'MesloLGS NF-18' -l 7 -sb '#ebbc
 bindsym $mod+c exec networkmanager_dmenu -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
 # clipmenu
-bindsym $mod+Control+c exec clipmenu -i -l 10 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
+bindsym $mod+Control+c exec clipmenu -i -l 5 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
+# emojipick
+bindsym $mod+Control+e exec emojipick -i -l 5 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
+# powermenu
+bindsym $mod+Control+p exec echo -e "poweroff\nreboot\nsuspend" | dmenu -i -l 5 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4' | xargs systemctl
 
 # bluethout manager in rofi
 # bindsym $mod+Control+b exec rofi-bluetooth
@@ -267,7 +271,7 @@ bindsym $mod+period exec amixer set Master -q 10%+
 
 # change monitor settings
 # extendend
-bindsym $mod+Control+e exec xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
+bindsym $mod+Control+d exec xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
 
 # hdmi only
 bindsym $mod+Control+h exec xrandr --output eDP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
