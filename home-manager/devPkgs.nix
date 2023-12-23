@@ -52,12 +52,18 @@ in
   # To work with rust projects
   pkgs.cargo
 
+  # bash
+
+  pkgs.nodePackages.bash-language-server
+
   # Python with some packages installed
   custom_python_enviroment
+  pkgs.pipx
+  pkgs.nodePackages.pyright
+
   # ruff python lint
   pkgs.ruff
   pkgs.ruff-lsp
-  pkgs.pipx
 
   # Nix
   pkgs.rnix-lsp
@@ -74,7 +80,6 @@ in
   #  node lsp
   pkgs.nodePackages.typescript-language-server
   pkgs.nodePackages.eslint
-  pkgs.nodePackages.pyright
 
   # golang
   pkgs.gopls

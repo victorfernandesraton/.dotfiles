@@ -2,6 +2,7 @@
 let
   p10kTheme = "$HOME/.p10k.zsh";
 in
+
 {
   home.file.".p10k.zsh".source = ./p10k.zsh;
   programs.zsh = {
@@ -11,7 +12,7 @@ in
       [[ ! -f ${p10kTheme} ]] || source ${p10kTheme}
     '';
     shellAliases = {
-      ocp = "cd $(fd -H -td -d 1 . /home/v_raton/git | fzf)";
+      ocp = "sh $HOME/.config/tmux/session-script.sh";
     };
     oh-my-zsh = {
       enable = true;

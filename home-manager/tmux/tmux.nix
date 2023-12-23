@@ -37,4 +37,8 @@
             bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
         '';
   };
+  home.file.".config/tmux/session-script.sh" = {
+    executable = true;
+    source = ./session-script.sh;
+  };
 }
