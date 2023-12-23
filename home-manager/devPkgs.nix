@@ -10,9 +10,6 @@ let
         pp.pytest
         pp.pip
         pp.virtualenv
-        pp.black
-        pp.isort
-        pp.python-lsp-server
         pp.debugpy
     ];
     custom_python_enviroment = pkgs.python311.withPackages custom_python_packages;
@@ -60,6 +57,8 @@ in
     custom_python_enviroment
     # ruff python lint
     pkgs.ruff
+    pkgs.ruff-lsp
+    pkgs.pipx
 
     # Nix
     pkgs.rnix-lsp
@@ -76,6 +75,7 @@ in
     #  node lsp
     pkgs.nodePackages.typescript-language-server
     pkgs.nodePackages.eslint
+    pkgs.nodePackages.pyright
 
     # golang
     pkgs.gopls

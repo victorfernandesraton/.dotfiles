@@ -71,7 +71,7 @@ in
     pkgs.tmux
     pkgs.scrot
     pkgs.thunderbird
-    pkgs.libsForQt5.kdeconnect-kde
+    pkgs.dcnnt
     pkgs.ungoogled-chromium
     pkgs.gimp
     pkgs.insomnia
