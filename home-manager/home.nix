@@ -4,17 +4,17 @@ let
   devPkgs = import ./devPkgs.nix pkgs;
 in
 {
-    imports = 
-        [
-        ./tmux.nix
-        ./zsh.nix
-        ./kitty/kitty.nix
-        ./nvim/nvim.nix
-        ./i3/i3.nix
-        ./i3status/i3status.nix
-        ./i3blocks/i3blocks.nix
-        ./helix/helix.nix
-        ];
+  imports =
+    [
+      ./tmux.nix
+      ./zsh.nix
+      ./kitty/kitty.nix
+      ./nvim/nvim.nix
+      ./i3/i3.nix
+      ./i3status/i3status.nix
+      ./i3blocks/i3blocks.nix
+      ./helix/helix.nix
+    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "v_raton";
@@ -22,7 +22,7 @@ in
 
   xdg.mimeApps = {
     enable = true;
-  
+
     defaultApplications = {
       "text/html" = "librewolf.desktop";
       "x-scheme-handler/http" = "librewolf.desktop";
@@ -64,28 +64,28 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = 
-  devPkgs ++
-  [
-    pkgs.cava
-    pkgs.tmux
-    pkgs.scrot
-    pkgs.thunderbird
-    pkgs.dcnnt
-    pkgs.ungoogled-chromium
-    pkgs.gimp
-    pkgs.insomnia
-    pkgs.discord
-    pkgs.galaxy-buds-client
-    pkgs.stremio
-    pkgs.spotify
-    pkgs.visidata
-    pkgs.obs-studio
-    pkgs.helix
-    pkgs.pwvucontrol
-    pkgs.neofetch
-    pkgs.htop
-  ];
+  home.packages =
+    devPkgs ++
+    [
+      pkgs.cava
+      pkgs.tmux
+      pkgs.scrot
+      pkgs.thunderbird
+      pkgs.dcnnt
+      pkgs.ungoogled-chromium
+      pkgs.gimp
+      pkgs.insomnia
+      pkgs.discord
+      pkgs.galaxy-buds-client
+      pkgs.stremio
+      pkgs.spotify
+      pkgs.visidata
+      pkgs.obs-studio
+      pkgs.helix
+      pkgs.pwvucontrol
+      pkgs.neofetch
+      pkgs.htop
+    ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

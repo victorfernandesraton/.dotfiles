@@ -1,12 +1,12 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
-    programs.tmux = {
-        enable = true;
-        shell = "${pkgs.zsh}/bin/zsh";
-        terminal = "tmux-256color";
-        # dotDir = ~/.config/tmux;
-        extraConfig = ''
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
+    terminal = "tmux-256color";
+    # dotDir = ~/.config/tmux;
+    extraConfig = ''
 
             # Enable RGB (truecolor)
             set -a terminal-features '*:RGB'
@@ -36,5 +36,5 @@
             bind P paste-buffer
             bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
         '';
-    };
+  };
 }

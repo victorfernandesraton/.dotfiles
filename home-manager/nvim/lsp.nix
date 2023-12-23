@@ -30,7 +30,8 @@
           'gopls',
           'bashls',
           'dockerls', 
-          'marksman'
+          'marksman',
+          'rnix'
         })
         local configs = lspconfig.configs
         if not configs.ruff_lsp then
@@ -58,10 +59,11 @@
             timeout_ms = 10000,
           },
           servers = {
-            ['tsserver'] = {'javascript', 'typescript'},
+            ['eslint'] = {'javascript', 'typescript', 'javascriptreact', 'javascript.jsx', 'typescriptreact', 'typescript.tsx'},
             ['rust_analyzer'] = {'rust'},
             ['gofmt'] = {'golang'},
-            ['ruff_lsp'] = {'python'}
+            ['ruff_lsp'] = {'python'},
+            ['rnix'] = {'nix', 'flake'}
           }
         })
       '';
@@ -69,7 +71,7 @@
 
     # Markdown support
     nvim-treesitter-parsers.markdown
- 
+
 
     # Go lsp
     nvim-treesitter-parsers.go
@@ -89,7 +91,7 @@
         require('go').setup()
       '';
     }
-   
+
 
     {
       plugin = nvim-cmp;

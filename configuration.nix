@@ -6,9 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos> 
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -23,7 +24,7 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-    
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -47,7 +48,7 @@
 
   # Enable firmware deamon update
   services.fwupd.enable = true;
-  
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -57,11 +58,11 @@
     layout = "us,br";
     xkbVariant = "intl,abnt2";
     displayManager = {
-        # for i3
-	defaultSession = "none+i3";
-	# lightdm.enable = true;
-	# for kde
-    	sddm.enable = true;
+      # for i3
+      defaultSession = "none+i3";
+      # lightdm.enable = true;
+      # for kde
+      sddm.enable = true;
     };
 
     windowManager.i3 = {
@@ -132,31 +133,31 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     telegram-desktop
-     librewolf
-     tor
-     tor-browser
-     neovim
-     git
-     gcc
-     kitty
-     home-manager
-     glibc
-     libvdpau
-     xorg.libxcb
-     networkmanagerapplet
-     vscodium
+    telegram-desktop
+    librewolf
+    tor
+    tor-browser
+    neovim
+    git
+    gcc
+    kitty
+    home-manager
+    glibc
+    libvdpau
+    xorg.libxcb
+    networkmanagerapplet
+    vscodium
   ];
-  
+
   environment.sessionVariables = {
-     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
   # bluethooth
   hardware.bluetooth.enable = true;
   # steam
   programs.steam.enable = true;
-  
+
   virtualisation = {
     # podman
     podman = {
@@ -173,12 +174,12 @@
       #};
     };
   };
-  
+
   # Enable experimental-features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
   fonts.packages = with pkgs; [
-     meslo-lgs-nf
+    meslo-lgs-nf
   ];
   # List services that you want to enable:
 
