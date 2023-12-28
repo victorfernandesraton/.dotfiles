@@ -140,6 +140,7 @@
       "v_raton" = import ./home-manager/home.nix;
     };
     useGlobalPkgs = true;
+    useUserPackages = true;
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget

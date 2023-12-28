@@ -78,6 +78,7 @@ in
       pkgs.galaxy-buds-client
       pkgs.stremio
       pkgs.spotify
+      pkgs.brave
       pkgs.visidata
       pkgs.obs-studio
       pkgs.helix
