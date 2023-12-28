@@ -2,14 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -128,8 +128,19 @@
 
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = (_: true);
+  };
 
+  # home manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "v_raton" = import ./home-manager/home.nix;
+    };
+    useGlobalPkgs = true;
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -141,12 +152,12 @@
     git
     gcc
     kitty
-    home-manager
     glibc
     libvdpau
     xorg.libxcb
     networkmanagerapplet
     vscodium
+    discord
   ];
 
   environment.sessionVariables = {
@@ -181,6 +192,8 @@
   fonts.packages = with pkgs; [
     meslo-lgs-nf
   ];
+
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

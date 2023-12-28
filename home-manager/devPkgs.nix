@@ -60,6 +60,7 @@ in
   custom_python_enviroment
   pkgs.pipx
   pkgs.nodePackages.pyright
+  pkgs.poetry
 
   # ruff python lint
   pkgs.ruff

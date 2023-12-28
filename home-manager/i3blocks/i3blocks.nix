@@ -39,6 +39,7 @@ in
         executable = true;
       };
       "${BASE_DIR}/config".text = ''
+        color=#e0def4
         [battery]
         command=sh ${SCRIPT_DIR}/battery
         interval=10
