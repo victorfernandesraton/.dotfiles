@@ -14,7 +14,7 @@ in
       ./i3status/i3status.nix
       ./i3blocks/i3blocks.nix
       ./helix/helix.nix
-      ./wallpaper.default.nix
+      ./wallpaper/default.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
