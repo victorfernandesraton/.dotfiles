@@ -17,12 +17,14 @@
     in
     {
 
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
+      nixosConfigurations = {
+        valhalla = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/valhalla/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
 
     };
