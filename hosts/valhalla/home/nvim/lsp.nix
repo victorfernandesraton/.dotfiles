@@ -71,7 +71,8 @@
             },
             ['rust_analyzer'] = {'rust'},
             ['ruff_lsp'] = {'python'},
-            ['rnix'] = {'nix', 'flake'}
+            ['rnix'] = {'nix', 'flake'},
+            ['gofmt'] = {'go', 'gomod', 'gowork', 'gotmpl'}
           }
         })
       '';
@@ -83,22 +84,6 @@
 
     # Go lsp
     nvim-treesitter-parsers.go
-    {
-      plugin = go-nvim;
-      type = "lua";
-      config = /*lua*/ ''
-        local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = "*.go",
-          callback = function()
-           require('go.format').goimport()
-          end,
-          group = format_sync_grp,
-        })
-
-        require('go').setup()
-      '';
-    }
 
 
     {

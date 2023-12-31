@@ -32,13 +32,14 @@ in
 [
   pkgs.gcc
   pkgs.libgcc
+  pkgs.glibc
+  pkgs.libcap
   pkgs.dpkg
   pkgs.zip # To archive files
   pkgs.unzip # Some nvim LSPs need this to install
   pkgs.nodejs_20 # Some nvim LSPs need this
   pkgs.go
   pkgs.libstdcxx5 # Some nvim LSP need this to work
-  pkgs.gcc-unwrapped
 ] ++
 
 # Container dev and tools
