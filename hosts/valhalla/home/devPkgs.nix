@@ -30,6 +30,8 @@ in
 
 # System packages
 [
+  pkgs.gcc
+  pkgs.libgcc
   pkgs.dpkg
   pkgs.zip # To archive files
   pkgs.unzip # Some nvim LSPs need this to install

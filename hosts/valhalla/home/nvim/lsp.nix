@@ -7,6 +7,8 @@
     cmp-buffer
     lsp-format-nvim
     lspkind-nvim
+    luasnip
+
     {
       plugin = nvim-lspconfig;
       type = "lua";
@@ -27,8 +29,8 @@
           'lua_ls', 
           'pyright',
           'tsserver',
-          'gopls',
           'bashls',
+          'gopls',
           'dockerls', 
           'marksman',
           'rnix'
@@ -68,7 +70,6 @@
               'typescript.tsx'
             },
             ['rust_analyzer'] = {'rust'},
-            ['gofmt'] = {'golang'},
             ['ruff_lsp'] = {'python'},
             ['rnix'] = {'nix', 'flake'}
           }
