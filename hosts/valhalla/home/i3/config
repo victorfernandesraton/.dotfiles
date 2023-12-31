@@ -242,6 +242,9 @@ bar {
 
 
 for_window [class="^.*"] border pixel 3
+
+# using tabbed by default
+workspace_layout tabbed
 #colors 
 # class                 border  backgr. text    indicator child_border
 client.focused          #ebbcba #ebbcba #191724 #ebbcba   #ebbcba
