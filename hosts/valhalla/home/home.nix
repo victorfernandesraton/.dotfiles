@@ -88,6 +88,7 @@ in
       pkgs.htop
       pkgs.libsForQt5.networkmanager-qt
       pkgs.krita
+      pkgs.mpv
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
