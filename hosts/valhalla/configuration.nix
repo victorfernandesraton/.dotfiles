@@ -12,6 +12,11 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      electron = prev.electron-bin.override;
+    })
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

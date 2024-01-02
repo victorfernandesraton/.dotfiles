@@ -47,8 +47,6 @@ in
 [
   pkgs.podman
   pkgs.podman-compose
-  pkgs.podman-desktop
-  pkgs.podman-desktop
 ] ++
   # Programming languages and their LSPs
 [
