@@ -17,15 +17,26 @@
     in
     {
 
-      nixosConfigurations = {
-        valhalla = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/valhalla/configuration.nix
-            inputs.home-manager.nixosModules.default
-          ];
+      nixosConfigurations =
+        # TODO: using callPkgs to make more sense oevrlays
+        let
+          pkgs = import nixpkgs {
+            overlays = [
+              (final: prev: {
+                electron = prev.electron-bin.override;
+              })
+            ];
+          };
+        in
+        {
+          valhalla = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./hosts/valhalla/configuration.nix
+              inputs.home-manager.nixosModules.default
+            ];
+          };
         };
-      };
 
     };
 }
