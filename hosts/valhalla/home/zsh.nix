@@ -10,6 +10,8 @@ in
     dotDir = ".config/zsh";
     initExtra = ''
       [[ ! -f ${p10kTheme} ]] || source ${p10kTheme}
+
+      uwufetch -i
     '';
     shellAliases = {
       ocp = "sh $HOME/.config/tmux/session-script.sh";
