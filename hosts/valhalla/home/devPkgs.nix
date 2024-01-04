@@ -82,7 +82,10 @@ in
   #  node lsp
   pkgs.nodePackages.typescript-language-server
   pkgs.nodePackages.eslint
+  pkgs.nodePackages.vscode-html-languageserver-bin
 
+  # CSS
+  pkgs.vscode-langservers-extracted
   # golang
   pkgs.gopls
   pkgs.delve

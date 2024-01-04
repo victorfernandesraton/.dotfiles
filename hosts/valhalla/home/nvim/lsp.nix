@@ -33,7 +33,9 @@
           'gopls',
           'dockerls', 
           'marksman',
-          'rnix'
+          'rnix',
+          'html',
+          'cssls'
         })
         local configs = lspconfig.configs
         if not configs.ruff_lsp then
@@ -67,7 +69,8 @@
               'javascriptreact', 
               'javascript.jsx', 
               'typescriptreact',
-              'typescript.tsx'
+              'typescript.tsx',
+              'html'
             },
             ['rust_analyzer'] = {'rust'},
             ['ruff_lsp'] = {'python'},
