@@ -83,6 +83,8 @@ in
   pkgs.nodePackages.typescript-language-server
   pkgs.nodePackages.eslint
   pkgs.nodePackages.vscode-html-languageserver-bin
+  pkgs.nodePackages.stylelint
+  pkgs.nodePackages.prettier
 
   # CSS
   pkgs.vscode-langservers-extracted

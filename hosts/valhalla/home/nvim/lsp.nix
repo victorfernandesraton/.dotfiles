@@ -29,29 +29,15 @@
           'lua_ls', 
           'pyright',
           'tsserver',
+          'eslint',
           'bashls',
           'gopls',
           'dockerls', 
           'marksman',
           'rnix',
           'html',
-          'cssls'
+          'ruff_lsp',
         })
-        local configs = lspconfig.configs
-        if not configs.ruff_lsp then
-          configs.ruff_lsp = {
-            default_config = {
-              cmd = { 'ruff-lsp' },
-              filetypes = { 'python' },
-              root_dir = require('lspconfig').util.find_git_ancestor,
-              init_options = {
-                settings = {
-                  args = {}
-                }
-              }
-            }
-          }
-        end
         lspconfig.texlab.setup({
           chktex = { onEdit = true, onOpenAndSave = true }
         })
@@ -70,12 +56,12 @@
               'javascript.jsx', 
               'typescriptreact',
               'typescript.tsx',
-              'html'
+              'html',
             },
             ['rust_analyzer'] = {'rust'},
             ['ruff_lsp'] = {'python'},
             ['rnix'] = {'nix', 'flake'},
-            ['gofmt'] = {'go', 'gomod', 'gowork', 'gotmpl'}
+            ['gofmt'] = {'go', 'gomod', 'gowork', 'gotmpl'},
           }
         })
       '';
