@@ -180,6 +180,7 @@
             p.tree-sitter-json
             p.tree-sitter-javascript
             p.tree-sitter-markdown
+            p.tree-sitter-go
           ]));
           type = "lua";
           config = ''        

@@ -41,7 +41,14 @@
         lspconfig.texlab.setup({
           chktex = { onEdit = true, onOpenAndSave = true }
         })
-        require('lspconfig').ruff_lsp.setup({})
+        lspconfig.ruff_lsp.setup({})
+        lspconfig.pyright.setup({
+          settings = {
+            python = {
+              venvPath = "./venv"
+            }
+          },
+        })
 
         lsp_zero.format_on_save({
           format_opts = {
