@@ -75,7 +75,6 @@
         arandr
         cinnamon.nemo
         fd
-        uwufetch
       ];
     };
   };

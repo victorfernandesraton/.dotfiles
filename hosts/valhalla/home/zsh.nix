@@ -11,7 +11,7 @@ in
     initExtra = ''
       [[ ! -f ${p10kTheme} ]] || source ${p10kTheme}
 
-      uwufetch -i
+      bunnyfetch
     '';
     shellAliases = {
       ocp = "sh $HOME/.config/tmux/session-script.sh";
