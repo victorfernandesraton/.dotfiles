@@ -61,7 +61,7 @@ in
         interval=30
 
         [time]
-        command=date +"%a %d/%m/%Y %H:%m"
+        command=date +"%a %d/%m/%Y %H:%M"
         interval=10
 
         [caps-lock]
