@@ -14,7 +14,6 @@ in
       ./i3status/i3status.nix
       ./i3blocks/i3blocks.nix
       ./helix/helix.nix
-      ./wallpaper/default.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -90,6 +89,7 @@ in
       pkgs.krita
       pkgs.mpv
       pkgs.bunnyfetch
+      pkgs.epiphany
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -101,6 +101,7 @@ in
 
   };
 
+  home.file.".config/wallpaper.webp".source = ./wallpaper/wallpaper.webp;
   # You can also manage environment variables but you will have to manually
   # source
   #

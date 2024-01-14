@@ -80,8 +80,8 @@
             vim.keymap.set("n", "<leader>y",  "\"+ Y")
 
             -- select and move highlight lines 
-            vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
             vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+            vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
             -- copy for external
             vim.keymap.set("n", "<leader>y", "\"+y")
@@ -94,6 +94,19 @@
             vim.keymap.set("v", "<C-u>", "<C-u>zz")
             vim.keymap.set("n", "<C-d>", "<C-d>zz")
             vim.keymap.set("v", "<C-d>", "<C-d>zz")
+
+            -- explorer 
+            vim.keymap.set("n", "<leader>pv", ":Lexplore<CR>")
+
+            require("Comment").setup({
+              padding = true,
+              sticky = true,
+              mappings = false,
+              toggler = {
+                line = '<C-/>',
+                block = '<C-?>',
+              },
+            })
           '';
         }
 
@@ -137,30 +150,6 @@
         nvim-web-devicons
         plenary-nvim
         nui-nvim
-
-        {
-          plugin = neo-tree-nvim;
-          type = "lua";
-          config = ''
-            vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
-            require("neo-tree").setup({
-              close_if_last_window = false,
-              enable_git_status = true,
-              filesystem = {
-                follow_current_file = {
-                  enabled = true,
-                  leave_dirs_open = false,
-                },
-                filtered_items = {
-                  hide_dotfiles = false,
-                  hide_gitignored = false,
-                },
-                hijack_netrw_behavior = "open_default",
-                use_libuv_file_watcher = true,
-              }
-            })
-          '';
-        }
 
         {
           plugin = undotree;

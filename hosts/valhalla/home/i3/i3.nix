@@ -3,10 +3,12 @@
 {
   home = {
     packages = with pkgs; [
+      libnotify
       dmenu
       networkmanager_dmenu
       dmenu-bluetooth
       clipmenu
+      xclip
       emojipick
     ];
     file = {

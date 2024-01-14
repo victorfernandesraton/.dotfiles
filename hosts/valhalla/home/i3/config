@@ -30,8 +30,8 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id betterlockscreen -u ~/.config/wallpaper.png 
-exec --no-startup-id feh --no-xinerama --bg-scale ~/.config/wallpaper.png
+exec --no-startup-id betterlockscreen -u ~/.config/wallpaper.webp 
+exec --no-startup-id feh --no-xinerama --bg-scale ~/.config/wallpaper.webp
 exec --no-startup-id clipmenud
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -86,7 +86,7 @@ bindsym $mod+c exec networkmanager_dmenu -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb 
 # clipmenu
 bindsym $mod+Control+c exec clipmenu -i -l 5 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
-# emojipick
+# bemoji
 bindsym $mod+Control+e exec emojipick -i -l 5 -fn 'MesloLGS NF-18' -sb '#ebbcba' -nb '#1f1d2e' -sf '#21202e' -nf '#e0def4'
 
 # powermenu
