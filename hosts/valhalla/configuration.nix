@@ -18,6 +18,8 @@
   # Try to use newer kernel
   boot.kernelPackages = pkgs.linuxPackages_6_6;
 
+  # usb
+  boot.supportedFilesystems = [ "ntfs" ];
   networking.hostName = "valhalla"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
