@@ -91,6 +91,7 @@ in
       pkgs.mpv
       pkgs.bunnyfetch
       pkgs.epiphany
+      pkgs.dig
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
