@@ -92,6 +92,7 @@ in
       pkgs.bunnyfetch
       pkgs.epiphany
       pkgs.dig
+      pkgs.whatsapp-for-linux
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
