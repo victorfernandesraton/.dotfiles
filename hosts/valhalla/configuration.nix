@@ -77,6 +77,7 @@
         arandr
         cinnamon.nemo
         fd
+        gnome-multi-writer
       ];
     };
   };
@@ -144,6 +145,11 @@
     useGlobalPkgs = true;
     useUserPackages = true;
   };
+  # enable old electron for logseq
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

@@ -73,7 +73,6 @@ in
       pkgs.scrot
       pkgs.thunderbird
       pkgs.dcnnt
-      pkgs.ungoogled-chromium
       pkgs.gimp
       pkgs.insomnia
       pkgs.galaxy-buds-client
@@ -93,6 +92,8 @@ in
       pkgs.epiphany
       pkgs.dig
       pkgs.whatsapp-for-linux
+      pkgs.logseq
+
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
