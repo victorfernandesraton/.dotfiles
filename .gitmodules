@@ -2,3 +2,8 @@
 	path = .config/nvim
 	url = ../nvim
         branch = main
+
+[submodule ".config/emacs"]
+	path = .config/emacs
+	url = ../emacs
+        branch = main
