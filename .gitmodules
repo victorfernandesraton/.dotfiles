@@ -8,7 +8,6 @@
 	url = ../emacs
         branch = main
 
-
 [submodule ".config/.vscodium"]
 	path = .config/.vscodium
 	url = ../.vscodium
