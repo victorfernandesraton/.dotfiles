@@ -80,3 +80,11 @@ fi
 #patch to cowsay work
 PATH="$PATH:/usr/games"
 export PATH
+
+
+# pyenv bulshit
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
