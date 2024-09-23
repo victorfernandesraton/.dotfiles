@@ -71,11 +71,6 @@ source "$HOME/.cargo/env"
 
 export PATH=/usr/local/go/bin:/home/v_raton/.asdf/shims:/home/v_raton/.asdf/bin:/home/v_raton/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/v_raton/.local/bin:/home/v_raton/go/bin:/nix/var/nix/profiles/default/bin/
 
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
 
 #patch to cowsay work
 PATH="$PATH:/usr/games"
@@ -88,7 +83,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 #compdef rcc
 compdef _rcc rcc
