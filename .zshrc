@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/v_raton/.zsh/completions:"* ]]; then export FPATH="/home/v_raton/.zsh/completions:$FPATH"; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -296,3 +298,4 @@ _rcc()
 if [ "$funcstack[1]" = "_rcc" ]; then
     _rcc
 fi
+# . "/home/v_raton/.deno/env"export PATH=$HOME/.local/bin:$PATH
