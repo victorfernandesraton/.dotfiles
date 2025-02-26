@@ -1,48 +1,49 @@
 #!/bin/bash
 
-FZF_RESULT=$(fd -H -td -d 2 . $HOME/git  | fzf)
+# Defina o diretório base fixo para o seu repositório Git na home
+BASE_DIR="${HOME}/git"  # Substitua por sua pasta Git real
 
+# Verifica se a pasta base existe
+if [ ! -d "$BASE_DIR" ]; then
+  echo "O diretório $BASE_DIR não existe. Saindo..."
+  exit 1
+fi
 
-# get folder name
-FOLDER=$(basename $FZF_RESULT)
+# Use 'fd' para listar diretórios até dois níveis de profundidade e 'fzf' para selecionar
+DIR=$(fd -H -td -d 2 . "$BASE_DIR" | fzf --prompt="Selecione um diretório: ")
 
-# lookup tmux session name
-SESSION=$(tmux list-sessions | grep $FOLDER | awk '{print $1}')
-SESSION=${SESSION//:/}
+# Verifica se o usuário selecionou um diretório ou cancelou a seleção
+if [ -z "$DIR" ]; then
+  echo "Nenhum diretório selecionado. Saindo..."
+  exit 1
+fi
 
-# check if variable is empty 
-# if not currently in tmux
+# Nome da sessão tmux com base no diretório escolhido
+SESSION_NAME=$(basename "$DIR")
+
+# Certifique-se de que o nome da sessão tmux seja válido (evitar problemas com caracteres especiais)
+SESSION_NAME=$(echo "$SESSION_NAME" | sed 's/[^a-zA-Z0-9_-]/_/g')
+
+# Verifica se já estamos dentro de uma sessão tmux
 if [ -z "$TMUX" ]; then
-  # tmux is not active
-  echo "is not tmux"
-  if [ -z "$SESSION" ]; then
-    # session does not exist
-    echo "session does not exist"
-    # create session
-    tmux new-session -s $FOLDER -c $FZF_RESULT
+  # Se não estamos dentro de uma sessão tmux, cria ou entra em uma nova sessão
+  if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+    # Se a sessão já existir, entra nela
+    tmux attach -t "$SESSION_NAME"
   else
-    # session exists
-    echo "session exists"
-    # attach to session
-    tmux attach -t $SESSION
+    # Se a sessão não existir, cria uma nova sessão no diretório
+    tmux new-session -d -s "$SESSION_NAME" -c "$DIR"
+    tmux attach -t "$SESSION_NAME"
   fi
 else
-  # tmux is active
-  echo "is tmux"
-  if [ -z "$SESSION" ]; then
-    # session does not exist
-    echo "session does not exist"
-    # jump to directory
-    cd $FZF_RESULT
-    # create session
-    tmux new-session -d -s $FOLDER -c $FZF_RESULT
-    # attach to session
-    tmux switch-client -t $FOLDER
+  # Se já estamos dentro de uma sessão tmux, apenas cria ou entra na sessão com o nome escolhido
+  if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+    # Se a sessão já existir, entra nela
+    tmux switch-client -t "$SESSION_NAME"
   else
-    # session exists
-    echo "session exists"
-    # attach to session
-    # switch to tmux session
-    tmux switch-client -t $SESSION
+    # Se a sessão não existir, cria uma nova sessão no diretório
+    tmux new-session -d -s "$SESSION_NAME" -c "$DIR"
+    tmux switch-client -t "$SESSION_NAME"
   fi
 fi
+
