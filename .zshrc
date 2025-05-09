@@ -298,4 +298,5 @@ _rcc()
 if [ "$funcstack[1]" = "_rcc" ]; then
     _rcc
 fi
-# . "/home/v_raton/.deno/env"export PATH=$HOME/.local/bin:$PATH
+export DENO_INSTALL="/home/v_raton/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
