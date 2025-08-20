@@ -49,13 +49,13 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# asdf 
-. "$HOME/.asdf/asdf.sh"
+
 
 # local bin
 export PATH=$PATH:$HOME/.local/bin
 # add golang bin installed
 export PATH=$PATH:$HOME/go/bin
+
 
 # neovim alkias
 alias vi=nvim
@@ -71,19 +71,16 @@ function ocp() {
 # add cargo info
 source "$HOME/.cargo/env"
 
-export PATH=/usr/local/go/bin:/home/v_raton/.asdf/shims:/home/v_raton/.asdf/bin:/home/v_raton/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/v_raton/.local/bin:/home/v_raton/go/bin:/nix/var/nix/profiles/default/bin/
-
-
 #patch to cowsay work
 PATH="$PATH:/usr/games"
 export PATH
 
 
-# pyenv bulshit
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# # pyenv bulshit
+#
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 export PATH=$HOME/.local/bin:$PATH
 #compdef rcc
@@ -300,3 +297,11 @@ if [ "$funcstack[1]" = "_rcc" ]; then
 fi
 export DENO_INSTALL="/home/v_raton/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# fnm
+FNM_PATH="/home/v_raton/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/v_raton/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
