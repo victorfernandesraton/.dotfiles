@@ -62,12 +62,6 @@ alias vi=nvim
 alias vim=nvim
 
 
-# aias tmux jump
-function ocp() { 
-    $HOME/.config/scripts/tmux_jump.sh
-}
-
-
 # add cargo info
 source "$HOME/.cargo/env"
 
@@ -305,3 +299,33 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+RVM_PATH="$HOME/.rvm/scripts/rvm"
+
+if [ -d "$RVM_PATH" ]; then
+  export PATH="$RVM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# personal scripts
+LOCAL_SCRIPTS="/home/v_raton/.config/scripts"
+if [ -d "$LOCAL_SCRIPTS" ]; then
+  export PATH="$LOCAL_SCRIPTS:$PATH"
+fi
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/home/v_raton/.bun/_bun" ] && source "/home/v_raton/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/v_raton/.opencode/bin:$PATH

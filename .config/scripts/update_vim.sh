@@ -6,12 +6,8 @@ DIR="${HOME}/git/personal/neovim"  # Substitua por sua pasta Git real
 # Navegar até o diretório
 cd "$DIR" || { echo "Diretório não encontrado!"; exit 1; }
 
-# Remover a pasta build se existir
-if [ -d "./build" ]; then
-    sudo rm -r ./build
-else
-    echo "Pasta ./build não existe, pulando remoção."
-fi
+git fetch
+
 # Fazer o pull do repositório
 if [ $(git rev-parse HEAD) = $(git rev-parse @{u}) ]; then
     echo "Não há mudanças no repositório."
@@ -21,8 +17,15 @@ else
     git pull
 fi
 
+# Remover a pasta build se existir
+if [ -d "./build" ]; then
+    sudo rm -r ./build
+else
+    echo "Pasta ./build não existe, pulando remoção."
+fi
+
 # Compilar o projeto com CMake
-sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make CMAKE_BUILD_TYPE=Release
 
 # Mudar para o diretório build
 cd build || { echo "Diretório build não encontrado!"; exit 1; }
