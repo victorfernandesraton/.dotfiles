@@ -12,3 +12,8 @@
 	path = .config/.vscodium
 	url = ../.vscodium
         branch = main
+
+[submodule ".config/opencode"]
+	path = .config/opencode
+	url = ../opencode
+        branch = main

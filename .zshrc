@@ -357,3 +357,6 @@ else
 fi
 ###-end-opencode-completions-###
 
+
+# SonarScanner
+export PATH=$PATH:/home/v_raton/sonar-scanner/bin
