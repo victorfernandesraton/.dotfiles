@@ -17,3 +17,8 @@
 	path = .config/opencode
 	url = ../opencode
         branch = main
+
+[submodule ".config/zed"]
+	path = .config/zed
+	url = ssh://git@codeberg.org/v_raton/zed.git
+	branch = main
